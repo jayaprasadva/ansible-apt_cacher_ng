@@ -508,7 +508,7 @@ apt_cacher_ng__ferm__dependent_rules:
     weight: '40'
     role: 'apt_cacher_ng'
     name: 'http_proxy'
-    rule_state: '{{ apt_cacher_ng__deploy_state }}'
+    delete: '{{ apt_cacher_ng__deploy_state != "present" }}'
 
 
 # .. envvar:: apt_cacher_ng__apparmor__dependent_config
